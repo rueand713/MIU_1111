@@ -1,0 +1,668 @@
+<!DOCTYPE html> 
+<!--	Rueben Anderson
+	11/13/2011
+	MIU 1111
+	Project 4
+-->
+<html> 
+
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>My Fitness | Get Fit!</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+</head> 
+
+	
+
+<body> 
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="home" data-add-back-btn="true" data-theme="e">
+
+	<!--<div data-role="header" data-position="fixed" data-theme="a">
+		<h1></h1>
+	</div>--><!-- /header -->
+
+	<div data-role="content">
+		<span id="searchGroup">
+			<img id="compBrand" src="images/myFitBrand.png" />
+			<input id="searchField" type="text" value= "" placeholder="Search for an exercise"/>
+				<a id="doSearch" href="#myRoutine">
+					<img id="goButton" src="images/go_button.png" alt="Go Button"/>
+				</a>
+		</span>
+		<a id="ctaLink" href="#myRoutine"><img id="branding" src="images/cta-iphone.png" data-role="button"/></a>
+			<div data-role="collapsible-set">
+				<h2>Browse by Category</h2>
+				<div data-role="collapsible" data-collapsed="true" data-theme="a">
+					<h3>Aerobics</h3>
+					<p><a id="aeroRunning" href="#myRoutine">Running</a></p>
+					<p><a id="aeroKickboxing" href="#myRoutine">Kickboxing</a></p>
+					<p><a id="aeroSwimming" href="#myRoutine">Swimming</a></p>
+					<p><a id="aeroBicycling" href="#myRoutine">Bicycling</a></p>
+					<p><a id="aeroRowing" href="#myRoutine">Rowing</a></p>
+					<p><a id="aeroJump" href="#myRoutine">Jump Rope</a></p>
+				</div>
+				<div data-role="collapsible" data-collapsed="true" data-theme="a">
+					<h3>Anaerobics</h3>
+					<p><a id="anaeroSquats" href="#myRoutine">Squats</a></p>
+					<p><a id="anaeroLeg" href="#myRoutine">Leg Extensions</a></p>
+					<p><a id="anaeroDumbbell" href="#myRoutine">Dumbell Curls</a></p>
+					<p><a id="anaeroBench" href="#myRoutine">Bench Press</a></p>
+					<p><a id="anaeroTricep" href="#myRoutine">Tricep Extensions</a></p>
+					<p><a id="anaeroBent" href="#myRoutine">Bent Over Rows</a></p>
+				</div>
+				<div data-role="collapsible" data-collapsed="true" data-theme="a">
+					<h3>Calisthenics</h3>
+					<p><a id="calisthJumping" href="#myRoutine">Jumping Jacks</a></p>
+					<p><a id="calisthLunges" href="#myRoutine">Lunges</a></p>
+					<p><a id="calisthDips" href="#myRoutine">Dips</a></p>
+					<p><a id="calisthCrunches" href="#myRoutine">Crunches</a></p>
+					<p><a id="calisthPull" href="#myRoutine">Pull Ups</a></p>
+					<p><a id="calisthPush" href="#myRoutine">Push Ups</a></p>
+				</div>
+				<div data-role="collapsible" data-collapsed="true" data-theme="a">
+					<h3>Flexibility</h3>
+					<p><a id="flexHip" href="#myRoutine">Hip Flexor Stretch</a></p>
+					<p><a id="flexPiriformis" href="#myRoutine">Piriformis Stretch</a></p>
+					<p><a id="flexHamstring" href="#myRoutine">Hamstring Stretch</a></p>
+					<p><a id="flexQuad" href="#myRoutine">Quad Stretch</a></p>
+					<p><a id="flexBack" href="#myRoutine">Back Stretch</a></p>
+					<p><a id="flexShoulder" href="#myRoutine">Shoulder Stretch</a></p>
+				</div>
+				<div data-role="collapsible" data-collapsed="true" data-theme="a">
+					<h3>Maternity</h3>
+					<p><a id="maternWalking" href="#myRoutine">Walking</a></p>
+					<p><a id="maternSide" href="#myRoutine">Side Lunges</a></p>
+					<p><a id="maternStep" href="#myRoutine">Step Ups</a></p>
+					<p><a id="maternLite" href="#myRoutine">Lite Swimming</a></p>
+					<p><a id="maternLying" href="#myRoutine">Lying Abduction</a></p>
+					<p><a id="maternWall" href="#myRoutine">Wall Squats</a></p>
+				</div>
+			</div> <!-- close collapsible set div -->
+		
+			<div data-role="fieldcontain">
+				<a id="appLink" href="http://rueand713.github.com/MiU-1111-Project4/miu-project4/Good%20App/index.html">To Good App</a>
+			</div>
+	</div><!-- /content -->
+
+	<!--<div data-role="footer" data-position="fixed" data-theme="a">
+		<h4></h4>
+	</div>-->
+</div><!-- /page one -->
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="myRoutine" data-add-back-btn="true" data-theme="e">
+
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<h1></h1>
+	</div><!-- /header -->
+
+	<div data-role="content"">
+		<img id="compBrand" src="images/myFitBrand.png" />
+		<form id="routineForm" action="#" method="post">
+			<fieldset>
+				<ul id="errors">
+				</ul>
+				<div id="titledSection" data-role="fieldcontain">
+					<p id="errorText" class="js_errors">* This is a required field.</p>
+					<h2>Routine Title</h2>
+					<!-- Allows the user to input a name for the routine -->
+					<input type="text" id="routineName" placeholder="Name This Routine"/>
+					<p id="inputHints">Ex: Tricep Showdown! or Weekly Run</p>
+				</div>
+				<div id="titledSection" data-role="fieldcontain">
+					<p id="errorSelect" class="js_errors">* This is a required field.</p>
+					<h2>Routine Location</h2>
+					<input type="text" id="routineLoc" placeholder="Input A Location For This Routine"/>
+					<p id="inputHints">Ex: Bally's or My Backyard</p>
+				</div>
+				<div id="titledSection" data-role="fieldcontain">
+					<p id="errorRadio" class="js_errors">* This is a required field.</p>
+					<h2>Select a type of exercise</h2>	
+					<div id="workout2" data-role="collapsible-set">
+						<div id="aero" data-role="collapsible" data-collapsed="true" data-theme="a">
+							<h3>Aerobics</h3>
+							<p><input type="Radio" name="exType" value="Running" id="running" /><label for="running">Running</label></p>
+							<p><input type="Radio" name="exType" value="Kickboxing" id="kickboxing" /><label for="kickboxing">Kickboxing</label></p>
+							<p><input type="Radio" name="exType" value="Swimming" id="swimming" /><label for="swimming">Swimming</label></p>
+							<p><input type="Radio" name="exType" value="Bicycling" id="bicycling" /><label for="bicycling">Bicycling</label></p>
+							<p><input type="Radio" name="exType" value="Rowing" id="rowing" /><label for="rowing">Rowing</label></p>
+							<p><input type="Radio" name="exType" value="Jump Rope" id="jumpRope" /><label for="jumpRope">Jump Rope</label></p>
+						</div>
+						<div id="anaero" data-role="collapsible" data-collapsed="true" data-theme="a">
+							<h3>Anaerobics</h3>
+							<p><input type="Radio" name="exType" value="Squats" id="squats" /><label for="squats">Squats</label></p>
+							<p><input type="Radio" name="exType" value="Leg Extension" id="legExtension" /><label for="legExtension">Leg Extensions</label></p>
+							<p><input type="Radio" name="exType" value="Dumbbell Curls" id="dumbbellCurls" /><label for="dumbbellCurls">Dumbell Curls</label></p>
+							<p><input type="Radio" name="exType" value="Bench Press" id="benchPress" /><label for="benchPress">Bench Press</label></p>
+							<p><input type="Radio" name="exType" value="Tricep Extension" id="tricepExtension" /><label for="tricepExtension">Tricep Extensions</label></p>
+							<p><input type="Radio" name="exType" value="Bent Over Rows" id="bentOverRows" /><label for="bentOverRows">Bent Over Rows</label></p>
+						</div>
+						<div id="calisth" data-role="collapsible" data-collapsed="true" data-theme="a">
+							<h3>Calisthenics</h3>
+							<p><input type="Radio" name="exType" value="Jumping Jacks" id="jumpingJacks" /><label for="jumpingJacks">Jumping Jacks</label></p>
+							<p><input type="Radio" name="exType" value="Lunges" id="lunges" /><label for="lunges">Lunges</label></p>
+							<p><input type="Radio" name="exType" value="Dips" id="dips" /><label for="dips">Dips</label></p>
+							<p><input type="Radio" name="exType" value="Crunches" id="crunches" /><label for="crunches">Crunches</label></p>
+							<p><input type="Radio" name="exType" value="Pull Ups" id="pullUps" /><label for="pullUps">Pull Ups</label></p>
+							<p><input type="Radio" name="exType" value="Push Ups" id="pushUps" /><label for="pushUps">Push Ups</label></p>
+						</div>
+						<div id="flex" data-role="collapsible" data-collapsed="true" data-theme="a">
+							<h3>Flexibility</h3>
+							<p><input type="Radio" name="exType" value="Hip Flexor Stretch" id="hipFlexorStretch" /><label for="hipFlexorStretch">Hip Flexor Stretch</label></p>
+							<p><input type="Radio" name="exType" value="Piriformis Stretch" id="piriformisStretch" /><label for="piriformisStretch">Piriformis Stretch</label></p>
+							<p><input type="Radio" name="exType" value="Hamstring Stretch" id="hamstringStretch" /><label for="hamstringStretch">Hamstring Stretch</label></p>
+							<p><input type="Radio" name="exType" value="Quad Stretch" id="quadStretch" /><label for="quadStretch">Quad Stretch</label></p>
+							<p><input type="Radio" name="exType" value="Back Stretch" id="backStretch" /><label for="backStretch">Back Stretch</label></p>
+							<p><input type="Radio" name="exType" value="Shoulder Stretch" id="shoulderStretch" /><label for="shoulderStretch">Shoulder Stretch</label></p>
+						</div>
+						<div id="matern" data-role="collapsible" data-collapsed="true" data-theme="a">
+							<h3>Maternity</h3>
+							<p><input type="Radio" name="exType" value="Walking" id="walking" /><label for="walking">Walking</label></p>
+							<p><input type="Radio" name="exType" value="Side Lunges" id="sideLunges" /><label for="sideLunges">Side Lunges</label></p>
+							<p><input type="Radio" name="exType" value="Step Ups" id="stepUps" /><label for="stepUps">Step Ups</label></p>
+							<p><input type="Radio" name="exType" value="Lite Swimming" id="liteSwimming" /><label for="liteSwimming">Lite Swimming</label></p>
+							<p><input type="Radio" name="exType" value="Lying Abduction" id="lyingAbduction" /><label for="lyingAbduction">Lying Abduction</label></p>
+							<p><input type="Radio" name="exType" value="Wall Squats" id="wallSquats" /><label for="wallSquats">Wall Squats</label></p>
+						</div>
+					</div><!-- close collapsible set-->
+				</div>
+				<!-- The user will select which days for this routine -->
+			
+				<div id="rtFreq"  data-role="fieldcontain">
+					<p id="errorCheckbox" class="js_errors">* This is a required field.</p>
+					<h2>Routine Frequency</h2>
+					<span>Select the day(s) for this exercise:</span>
+					<ul id="routineDays" style="list-style: none">
+						<li><input type="Checkbox" value="Sunday" id="sunday" /><label for="sunday">Sun</label></li>
+						<li><input type="Checkbox" value="Monday" id="monday" /><label for="monday">Mon</label></li>
+						<li><input type="Checkbox" value="Tuesday" id="tuesday" /><label for="tuesday">Tue</label></li>
+						<li><input type="Checkbox" value="Wednesday" id="wednesday" /><label for="wednesday">Wed</label></li>
+						<li><input type="Checkbox" value="Thursday" id="thursday" /><label for="thursday">Thu</label></li>
+						<li><input type="Checkbox" value="Friday" id="friday" /><label for="friday">Fri</label></li>
+						<li><input type="Checkbox" value="Saturday" id="saturday" /><label for="saturday">Sat</label></li>
+					</ul>
+				</div>
+			
+						<!-- The user will input a value in the range from 1 to 100 -->
+				
+				<div id="titledSection" data-role="fieldcontain">
+					<p id="errorRange" class="js_errors">* This is a required field.</p>
+					<h2>Exercise Length</h2>
+					<span id="wDescript">Reps/Duration:</span>
+					<br>	<!-- The value of the slider will dynamically be updated within the #rangeVal span tag -->
+					<input type="range" min="1" max="100" value="50" id="workout"/>
+				</div>
+			
+				<!-- This field asks the user for additional details for the routine -->
+			
+				<div id="titledSection" data-role="fieldcontain">
+					<h2>Notes</h2>
+					<textarea id="comments" placeholder="Store exercise notes here."></textarea>
+					<p id="inputHints">Ex: Reps w/ 45lb weights, Duration (min)</p>
+				</div>
+			
+				<!-- The user will enter a starting date for the routine -->
+			
+				<div id="titledSection" data-role="fieldcontain">
+					<p id="errorDate" class="js_errors">* This is a required field.</p>
+					<h2>Routine Date</h2>
+					<input type="date" id="startDate" placeholder="YYYY-MM-DD"/>
+					<p id="inputHints">Choose a date in this format: YYYY-MM-DD</p>
+				</div>
+				<input type="reset" id="reset" value="Reset Fields" />
+				<input type="submit" id="submit" value="Add Exercise" />
+			</fieldset>
+		</form>
+		<nav id="addItem">
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><a id="clearLists" href="#"><button type="submit">Clear</button></a></div>
+				<div class="ui-block-b">
+					<a id="showData" href="#"><button type="submit">Routines</button></a>
+					<a id="addNew" href="#home" style="display:none;"><button type="submit">New</button></a>
+				</div>
+			</div><!-- /grid-a -->
+		</nav>
+		<div  id="body">
+			<div class="ui-grid-d">
+				<div class="ui-block-a">
+					<a id="dumbbellList" href="#list"><img src="images/Dumbbell.png" /></a>
+				</div>
+				<div class="ui-block-b">
+					<a id="runningList" href="#list"><img src="images/Running.png" /></a>
+				</div>
+				<div class="ui-block-c">
+					<a id="hipList" href="#list"><img src="images/Hip.png" /></a>
+				</div>
+				<div class="ui-block-d">
+					<a id="dipsList" href="#list"><img src="images/Dips.png" /></a>
+				</div>
+				<div class="ui-block-e">
+					<a id="walkingList" href="#list"><img src="images/Walking.png" /></a>
+				</div>
+			</div>
+			
+			<div class="ui-grid-d">
+				<div class="ui-block-a">
+					<a id="backList" href="#list"><img src="images/Back.png" /></a><
+				</div>
+				<div class="ui-block-b">
+					<a id="crunchesList" href="#list"><img src="images/Crunches.png" /></a>
+				</div>
+				<div class="ui-block-c">
+					<a id="benchList" href="#list"><img src="images/Bench.png" /></a>
+				</div>
+				<div class="ui-block-d">
+					<a id="kickboxingList" href="#list"><img src="images/Kickboxing.png" /></a>
+				</div>
+				<div class="ui-block-e">
+					<a id="jumpList" href="#list"><img src="images/Jump.png" /></a>
+				</div>
+			</div>
+			
+			<div class="ui-grid-d">
+				<div class="ui-block-a">
+					<a id="tricepList" href="#list"><img src="images/Tricep.png" /></a>
+				</div>
+				<div class="ui-block-b">
+					<a id="swimmingList" href="#list"><img src="images/Swimming.png" /></a>
+				</div>
+				<div class="ui-block-c">
+					<a id="hamstringList" href="#list"><img src="images/Hamstring.png" /></a>
+				</div>
+				<div class="ui-block-d">
+					<a id="lungesList" href="#list"><img src="images/Lunges.png" /></a>
+				</div>
+				<div class="ui-block-e">
+					<a id="stepList" href="#list"><img src="images/Step.png" /></a>
+				</div>
+			</div>
+			
+			<div class="ui-grid-d">
+				<div class="ui-block-a">
+					<a id="shoulderList" href="#list"><img src="images/Shoulder.png" /></a>
+				</div>
+				<div class="ui-block-b">
+					<a id="pullList" href="#list"><img src="images/Pull.png" /></a>
+				</div>
+				<div class="ui-block-c">
+					<a id="bentList" href="#list"><img src="images/Bent.png" /></a>
+				</div>
+				<div class="ui-block-d">
+					<a id="rowingList" href="#list"><img src="images/Rowing.png" /></a>
+				</div>
+				<div class="ui-block-e">
+					<a id="bicyclingList" href="#list"><img src="images/Bicycling.png" /></a>
+				</div>
+			</div>
+		</div>
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-position="fixed" data-theme="a">
+		<h4><a id="homeLink" href="#" style="color:#FFF">HOME</a></h4>
+	</div>
+</div><!-- /page two -->
+
+
+ 
+<div data-role="page" id="list" data-add-back-btn="true" data-theme="e">
+
+	<div data-role="header" data-position="fixed" data-theme="a">
+		<h1>My Routines</h1>
+	</div>
+
+	<div data-role="content">	
+		<div id="listHere">
+			
+			<ul id="dumbbellListItem" data-role="listview">
+				<li><img src="images/Dumbbell.png" />
+				<h3>Routine 1</h3>
+				<p>Routine: Free Weights</p>
+				<p>Workout: Dumbbell Curls</p>
+				<p>Sun: </p>
+				<p>Mon: ×</p>
+				<p>Tue: </p>
+				<p>Wed: ×</p>
+				<p>Thu: </p>
+				<p>Fri: ×</p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 15</p>
+				<p>Comments: Reps / 25lb weights</p>
+				<p>Start: 2011-10-25</p></li>
+			</ul>
+			<ul id="runningListItem" data-role="listview">
+				<li><img src="images/Running.png" />
+				<h3>Routine 2</h3>
+				<p>Routine: Free Run</p>
+				<p>Workout: Running</p>
+				<p>Sun: </p>
+				<p>Mon: </p>
+				<p>Tue: ×</p>
+				<p>Wed: </p>
+				<p>Thu: ×</p>
+				<p>Fri: </p>
+				<p>Sat: ×</p>
+				<p>Reps/Duration: 3</p>
+				<p>Comments: Duration (miles)</p>
+				<p>Start: 2011-10-15</p></li>
+			</ul>
+			<ul id="hipListItem" data-role="listview">
+				<li><img src="images/Hip.png" />
+				<h3>Routine 3</h3>
+				<p>Routine: Flexor</p>
+				<p>Workout: Hip Flexor Stretch</p>
+				<p>Sun: </p>
+				<p>Mon: </p>
+				<p>Tue: ×</p>
+				<p>Wed: ×</p>
+				<p>Thu: </p>
+				<p>Fri: </p>
+				<p>Sat: ×</p>
+				<p>Reps/Duration: 30</p>
+				<p>Comments: Duration (sec)</p>
+				<p>Start: 2011-09-25</p></li>
+			</ul>
+			<ul id="dipsListItem" data-role="listview">
+				<li><img src="images/Dips.png" />
+				<h3>Routine 4</h3>
+				<p>Routine: Double Dip</p>
+				<p>Workout: Dips</p>
+				<p>Sun: ×</p>
+				<p>Mon: ×</p>
+				<p>Tue: </p>
+				<p>Wed: ×</p>
+				<p>Thu: </p>
+				<p>Fri: </p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 20</p>
+				<p>Comments: Reps</p>
+				<p>Start: 2011-09-15</p></li>
+			</ul>
+			<ul id="walkingListItem" data-role="listview">	
+				<li><img src="images/Walking.png" />
+				<h3>Routine 5</h3>
+				<p>Routine: Warm Ups</p>
+				<p>Workout: Walking</p>
+				<p>Sun: ×</p>
+				<p>Mon: ×</p>
+				<p>Tue: </p>
+				<p>Wed: ×</p>
+				<p>Thu: ×</p>
+				<p>Fri: </p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 35</p>
+				<p>Comments: Duration (min)</p>
+				<p>Start: 2011-08-25</p></li>
+			</ul>
+			<ul id="backListItem" data-role="listview">	
+				<li><img src="images/Back.png" />
+				<h3>Routine 6</h3>
+				<p>Routine: Lower Back</p>
+				<p>Workout: Back Stretch</p>
+				<p>Sun: ×</p>
+				<p>Mon: </p>
+				<p>Tue: ×</p>
+				<p>Wed: ×</p>
+				<p>Thu: </p>
+				<p>Fri: ×</p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 15</p>
+				<p>Comments: Duration (sec)</p>
+				<p>Start: 2011-08-15</p></li>
+			</ul>
+			<ul id="crunchesListItem" data-role="listview">	
+				<li><img src="images/Crunches.png" />
+				<h3>Routine 7</h3>
+				<p>Routine: Abdominals</p>
+				<p>Workout: Crunches</p>
+				<p>Sun: </p>
+				<p>Mon: </p>
+				<p>Tue: ×</p>
+				<p>Wed: </p>
+				<p>Thu: ×</p>
+				<p>Fri: </p>
+				<p>Sat: ×</p>
+				<p>Reps/Duration: 50</p>
+				<p>Comments: Reps</p>
+				<p>Start: 2011-07-25</p></li>
+			</ul>
+			<ul id="benchListItem" data-role="listview">	
+				<li><img src="images/Bench.png" />
+				<h3>Routine 8</h3> 
+				<p>Routine: Bench</p>
+				<p>Workout: Bench Press</p>
+				<p>Sun: </p>
+				<p>Mon: ×</p>
+				<p>Tue: ×</p>
+				<p>Wed: </p>
+				<p>Thu: ×</p>
+				<p>Fri: ×</p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 20</p>
+				<p>Comments: Reps / 110lbs</p>
+				<p>Start: 2011-07-15</p></li>
+			</ul>
+			<ul id="kickboxingListItem" data-role="listview">
+				<li><img src="images/Kickboxing.png" />
+				<h3>Routine 9</h3>
+				<p>Routine: Spar</p>
+				<p>Workout: Kickboxing</p>
+				<p>sun: Sun: ×</p>
+				<p>mon: Mon: </p>
+				<p>tue: Tue: </p>
+				<p>wed: Wed: </p>
+				<p>thu: Thu: </p>
+				<p>fri: Fri: </p>
+				<p>sat: Sat: ×</p>
+				<p>Reps/Duration: 90</p>
+				<p>Comments: Duration (min)</p>
+				<p>Start: 2011-06-25</p></li>
+			</ul>
+			<ul id="jumpListItem" data-role="listview">	
+				<li><img src="images/Jump.png" />
+				<h3>Routine 10</h3>
+				<p>Routine: For heart</p>
+				<p>Workout: Jump Rope</p>
+				<p>Sun: ×</p>
+				<p>Mon: </p>
+				<p>Tue: ×</p>
+				<p>Wed: </p>
+				<p>Thu: ×</p>
+				<p>Fri: </p>
+				<p>Sat: ×</p>
+				<p>Reps/Duration: 5</p>
+				<p>Comments: Duration (min)</p>
+				<p>Start: 2011-06-15</p></li>
+			</ul>
+			<ul id="tricepListItem" data-role="listview">
+				<li><img src="images/Tricep.png" />
+				<h3>Routine 11</h3>
+				<p>Routine: Tricep Targetting</p>
+				<p>Workout: Tricep Extension</p>
+				<p>Sun: ×</p>
+				<p>Mon: </p>
+				<p>Tue: </p>
+				<p>Wed: ×</p>
+				<p>Thu: </p>
+				<p>Fri: ×</p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 10</p>
+				<p>Comments: Reps / 20lbs</p>
+				<p>Start: 2011-10-24</p></li>
+			</ul>
+			<ul id="swimmingListItem" data-role="listview">	
+				<li><img src="images/Swimming.png" />
+				<h3>Routine 12</h3>
+				<p>Routine: Quick Swim</p>
+				<p>Workout: Swimming</p>
+				<p>Sun: </p>
+				<p>Mon: ×</p>
+				<p>Tue: ×</p>
+				<p>Wed: </p>
+				<p>Thu: ×</p>
+				<p>Fri: ×</p>
+				<p>Sat: ×</p>
+				<p>Reps/Duration: 5</p>
+				<p>Comments: Laps</p>
+				<p>Start: 2011-10-10</p></li>
+			</ul>
+			<ul id="hamstringListItem" data-role="listview">
+				<li><img src="images/Hamstring.png" />
+				<h3>Routine 13</h3>
+				<p>Routine: Hamstrings</p>
+				<p>Workout: Hamstring Stretch</p>
+				<p>Sun: </p>
+				<p>Mon: ×</p>
+				<p>Tue: ×</p>
+				<p>Wed: </p>
+				<p>Thu: </p>
+				<p>Fri: </p>
+				<p>Sat: ×</p>
+				<p>Reps/Duration: 30</p>
+				<p>Comments: Duration (sec)</p>
+				<p>Start: 2011-09-20</p></li>
+			</ul>
+			<ul id="lungesListItem" data-role="listview">	
+				<li><img src="images/Lunges.png" />
+				<h3>Routine 14</h3> 
+				<p>Routine: Deep Steps</p>
+				<p>Workout: Lunges</p>
+				<p>Sun: ×</p>
+				<p>Mon: ×</p>
+				<p>Tue: </p>
+				<p>Wed: ×</p>
+				<p>Thu: </p>
+				<p>Fri: </p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 20</p>
+				<p>Comments: Reps hold 5 sec</p>
+				<p>Start: 2011-09-14</p></li>
+			</ul>
+			<ul id="stepListItem" data-role="listview">
+				<li><img src="images/Step.png" />
+				<h3>Routine 15</h3>
+				<p>Routine: Stepping</p>
+				<p>Workout: Step Ups</p>
+				<p>Sun: ×</p>
+				<p>Mon: ×</p>
+				<p>Tue: </p>
+				<p>Wed: ×</p>
+				<p>Thu: ×</p>
+				<p>Fri: </p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 15</p>
+				<p>Comments: Duration (min)</p>
+				<p>Start: 2011-08-24</p></li>
+			</ul>
+			<ul id="shoulderListItem" data-role="listview">	
+				<li><img src="images/Shoulder.png" />
+				<h3>Routine 16</h3>
+				<p>Routine: Shoulder/Rotator</p>
+				<p>Workout: Shoulder Stretch</p>
+				<p>Sun: </p>
+				<p>Mon: ×</p>
+				<p>Tue: </p>
+				<p>Wed: ×</p>
+				<p>Thu: </p>
+				<p>Fri: </p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 15</p>
+				<p>Comments: Duration (sec)</p>
+				<p>Start: 2011-08-10</p></li>
+			</ul>
+			<ul id="pullListItem" data-role="listview">	
+				<li><img src="images/Pull.png" />
+				<h3>Routine 17</h3> 
+				<p>Routine: Total Body</p>
+				<p>Workout: Pull Ups</p>
+				<p>Sun: </p>
+				<p>Mon: ×</p>
+				<p>Tue: ×</p>
+				<p>Wed: </p>
+				<p>Thu: ×</p>
+				<p>Fri: ×</p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 50</p>
+				<p>Comments: Reps</p>
+				<p>Start: 2011-07-24</p></li>
+			</ul>		 
+			<ul id="bentListItem" data-role="listview">	
+				<li><img src="images/Bent.png" />
+				<h3>Routine 18</h3>
+				<p>Routine: Arm & Back</p>
+				<p>Workout: Bent Over Rows</p>
+				<p>Sun: </p>
+				<p>Mon: </p>
+				<p>Tue: ×</p>
+				<p>Wed: </p>
+				<p>Thu: ×</p>
+				<p>Fri: </p>
+				<p>Sat: </p>
+				<p>Reps/Duration: 15</p>
+				<p>Comments: Reps / 25lbs</p>
+				<p>Start: 2011-07-10</p></li>
+			</ul>		 
+			<ul id="rowingListItem" data-role="listview">	
+				<li><img src="images/Rowing.png" />
+				<h3>Routine 19</h3>
+				<p>Routine: Row your boat!</p>
+				<p>Workout: Rowing</p>
+				<p>Sun: ×</p>
+				<p>Mon: </p>
+				<p>Tue: </p>
+				<p>Wed: </p>
+				<p>Thu: </p>
+				<p>Fri: </p>
+				<p>Sat: ×</p>
+				<p>Reps/Duration: 15</p>
+				<p>Comments: Duration (min)</p>
+				<p>Start: 2011-06-20</p></li>
+			</ul>		 
+			<ul id="bicyclingListItem" data-role="listview">	
+				<li><img src="images/Bicycling.png" />
+				<h3>Routine 20</h3>
+				<p>Routine: Cycling</p>
+				<p>Workout: Bicycling</p>
+				<p>Sun: ×</p>
+				<p>Mon: </p>
+				<p>Tue: ×</p>
+				<p>Wed: </p>
+				<p>Thu: ×</p>
+				<p>Fri: </p>
+				<p>Sat: ×</p>
+				<p>Reps/Duration: 20</p>
+				<p>Comments: Duration (min)</p>
+				<p>Start: 2011-06-14</p></li>
+			</ul>
+		</div>
+	</div>
+
+	
+	<!--<div data-role="footer" data-position="fixed" data-theme="b">
+		<h4><a href="ref.html">HOME</a></h4>
+	</div>-->
+</div>
+
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
