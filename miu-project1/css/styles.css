@@ -1,0 +1,254 @@
+/*	Rueben Anderson
+		10/25/2011
+		MIU 1111
+		Project 1
+*/
+
+	/* Create a background gradient from white to blue to white 
+		3 prefixed values: mozilla, opera, webkit all others will get standard background color 
+		applies only to form page. */
+.gradient {
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #214874 30%, #214874 75%, #FFFFFF 100%);
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #214874 30%, #214874 75%, #FFFFFF 100%);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #214874 30%, #214874 75%, #FFFFFF 100%);
+}
+
+	/* Sets the font page defaults */
+html {
+	font-family: "Hoefler Text", "Times New Roman", Helvetica, Times, san-serif;
+	font-size: 16px;
+}
+
+	/* Adds padding to the top and bottom of the header group */
+hgroup {
+	padding: 2px 0px;
+}
+
+	/* H1 element tags */
+h1 {
+	text-align: center;
+	color: #3eafe3;
+}
+
+	/* H2 element tags */
+h2 {
+	padding: 0px 3px 7px 3px;
+	margin: 1px 0px 5px 0px;
+}
+
+ul#browse h2 {
+	margin: 5px 0px 10px 0px;
+}
+
+	/* Body element tags */
+body {
+	margin: 2px;
+	max-width: 320px;
+	min-width: 320px;
+	color: #4d89cd;
+	background-color: #000000;
+}
+
+	/* Form element tags */
+form {
+	max-width: 320px;
+	min-width: 320px;
+	font-size: 14px;
+	border-style: none solid;
+	border-color: #777777;
+	border-radius: 15px;
+	background-color: #EDF2F7;
+}
+
+	/* Fieldset element tags */
+fieldset {
+	max-width: 320px;
+	border: none;
+	background-color: transparent;
+	padding: 10px 2px;
+}
+
+	/* Add some padding around the legend element to reduce cramping */
+legend {
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: .12em;
+	padding-top: 5px;
+}
+
+	/* Creates a background and border style similar to the form field's for consistency */
+div#main {
+	padding: 3px 2px;
+	border-style: none solid;
+	border-radius: 10px;
+	border-color: #777777;
+	background-color: #FFFFFF;
+}
+
+	/* CTA image on home page */
+div#cta a img#branding {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	display: block;
+	border-style: solid;
+	border-radius: 7px;
+	border-color: #3eafe3;
+}
+	/* Div containing CTA */
+div#cta {
+	padding: 10px 0px;
+}
+
+	/* Adds a little space between ul & li elements */
+ul, li {
+	list-style-type: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+	/* UL elements with the given id */
+ul#routineDays, ul#aerobics, ul#anaerobics, ul#calisthenics, ul#flexibility, ul#maternity {
+	width: 300px;
+	padding-left: 0px;
+	padding-top: 7px;
+}
+	/* The form field LI elements */
+ul li div ul li {
+	padding-left: 10px;
+}
+	/* The UL element for error output */
+ul#errors {
+	padding-left: 0px;
+}
+	
+	/* General anchor links */
+a {
+	color: #316CBF;
+}
+
+	/* Mousing over anchor links */
+a:hover {
+	color: #FFFFFF;
+}
+	/* Form descriptive texts */
+span {
+	font-size: 16px;
+	width: 50px;
+	margin-top: 20px;
+	word-wrap: break-word;
+}
+
+span, #startDate, #comments, #routineName, #exercise {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#startDate, #routineName, #exercise, #workout {
+	margin-bottom: 7px;
+}
+
+	/* Get data images */
+div > ul li > img {
+	margin-left: auto;
+	margin-right: 25px;
+	display: block;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: #3eafe3;
+}
+	/* Category buttons */
+div#main div#cta nav#topNav ul#browse li img {
+	border-radius: 5px;
+	border-style: none;
+}
+	/* Exercise divs in the form (hidden by default) */
+#aerobics, #anaerobics, #flexibility, #calisthenics, #maternity {
+	display: none;
+}
+	/* The category buttons' parent UL element */
+#browse {
+	margin: 0px;
+	padding: 0px 8px 10px 8px;
+}
+	/* Category button LI elements */
+div nav#topNav ul#browse li{
+	font-size: 15px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+	/*
+	background-image: -moz-linear-gradient(top, #AAC2CC 0%, #75858C 30%, #75858C 75%, #AAC2CC 100%);
+	background-image: -o-linear-gradient(top, #AAC2CC 0%, #75858C 30%, #75858C 75%, #AAC2CC 100%);
+	background-image: -webkit-linear-gradient(top, #AAC2CC 0%, #75858C 30%, #75858C 75%, #AAC2CC 100%);
+	*/
+}
+	/* Form navigation elements on the addItem page */
+nav#addItem {
+	text-align: right;
+	padding-right: 10px;
+}
+	/* Parent UL inside of the form (contains all other lists) */
+ul#fgroup {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+	/* Navigation element containing the category buttons */
+nav#topNav {
+	padding-top: 20px;
+	margin-top: 0px;
+}
+	/* Search field above CTA */
+input#searchField {
+	height: 25px;
+	width: 230px;
+	border-radius: 5px 0px 0px 5px;
+	border-color: #3eafe3;
+	margin: 0px 0px 5px 0px;
+}
+	/* Search field's "Go" button */
+a#doSearch img#goButton {
+	position: relative;
+	left: -4px;
+	top: 14px;
+	padding-top: 5px;
+	padding-left: 0px;
+}
+	/* Span element containing the search field and go button */
+span#searchGroup {
+	margin-left: 5px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+	/* Form submit button */
+#submit {
+	margin: 10px 10px 5px 210px;
+}
+	/* Div-groups on form page */
+#titledSection {
+	background-color: #FFF;
+	border-color: #3eafe3;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+}
+	/* Get data Div */
+div#routines {
+	border-style: none solid;
+	border-radius: 10px;
+	border-color: #777;
+	background-color: #EDF2F7;
+	margin-top: 0px;
+	padding-top: 10px;
+}
+
+	/* Get data UL elements */
+div#routines ul {
+	padding: 0px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-color: #4d89cd;
+	border-width: 1px;
+	border-style: none none solid none;
+}
